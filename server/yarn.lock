@@ -2,6 +2,22 @@
 # yarn lockfile v1
 
 
+"@adonisjs/config@^1.0.10":
+  version "1.0.10"
+  resolved "https://registry.yarnpkg.com/@adonisjs/config/-/config-1.0.10.tgz#a113786e0e460176bf1d9d2fc6d913bf3e445437"
+  integrity sha512-cfVYkWWVHuZPbc+U7SyII6+DoZ9MepJIm82KZDMNNqn5hBVxQo3YSO4D03XBLznoaIojT175n9vCLKJtESDVyA==
+  dependencies:
+    "@poppinss/utils" "^2.0.0"
+    lodash "^4.17.15"
+
+"@poppinss/utils@^2.0.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@poppinss/utils/-/utils-2.1.0.tgz#72136b782602137c622f4838fc1c97f5a753baa8"
+  integrity sha512-v3pg4vzZgzOfrhZduoXm8j/Fz2QNIruKaIwPSAbgw7kFM81fPpCZ/P//szUq0jK/l45VKkqAGzoWF1/z6eMzHw==
+  dependencies:
+    require-all "^3.0.0"
+    resolve-from "^5.0.0"
+
 "@types/body-parser@*":
   version "1.17.1"
   resolved "https://registry.yarnpkg.com/@types/body-parser/-/body-parser-1.17.1.tgz#18fcf61768fb5c30ccc508c21d6fd2e8b3bf7897"
@@ -69,6 +85,11 @@ accepts@~1.3.7:
   dependencies:
     mime-types "~2.1.24"
     negotiator "0.6.2"
+
+add@^2.0.6:
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/add/-/add-2.0.6.tgz#248f0a9f6e5a528ef2295dbeec30532130ae2235"
+  integrity sha1-JI8Kn25aUo7yKV2+7DBTITCuIjU=
 
 ansi-align@^2.0.0:
   version "2.0.0"
@@ -759,7 +780,7 @@ latest-version@^3.0.0:
   dependencies:
     package-json "^4.0.0"
 
-lodash@^4.17.14:
+lodash@^4.17.14, lodash@^4.17.15:
   version "4.17.15"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
   integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
@@ -1077,6 +1098,16 @@ registry-url@^3.0.3:
   integrity sha1-PU74cPc93h138M+aOBQyRE4XSUI=
   dependencies:
     rc "^1.0.1"
+
+require-all@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/require-all/-/require-all-3.0.0.tgz#473d49704be310115ce124f77383b1ebd8671312"
+  integrity sha1-Rz1JcEvjEBFc4ST3c4Ox69hnExI=
+
+resolve-from@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/resolve-from/-/resolve-from-5.0.0.tgz#c35225843df8f776df21c57557bc087e9dfdfc69"
+  integrity sha512-qYg9KP24dD5qka9J47d0aVky0N+b4fTU89LN9iDnjB5waksiC49rvMB0PrUJQGoTmH50XPiqOvAjDfaijGxYZw==
 
 safe-buffer@5.1.2, safe-buffer@~5.1.0, safe-buffer@~5.1.1:
   version "5.1.2"
@@ -1419,6 +1450,11 @@ yallist@^2.1.2:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/yallist/-/yallist-2.1.2.tgz#1c11f9218f076089a47dd512f93c6699a6a81d52"
   integrity sha1-HBH5IY8HYImkfdUS+TxmmaaoHVI=
+
+yarn@^1.21.0:
+  version "1.21.0"
+  resolved "https://registry.yarnpkg.com/yarn/-/yarn-1.21.0.tgz#e0827d97a24f6714f1540cf2e8328b2e8eed682c"
+  integrity sha512-g9cvrdKXPZlz1eJYpKanQm3eywEmecudeyDkwiVWeswBrpHK3nJFBholkphHF9eNc8y/FNEhSQ8Et5ZAx4XyLw==
 
 yn@^3.0.0:
   version "3.1.1"

@@ -1,23 +1,24 @@
 import "reflect-metadata"; // We need this in order to use @Decorators
 
-import config from "./config";
-
 import express from "express";
 
 import Logger from "./loaders/logger";
+import ConfigLoader from "./loaders/config";
+import Container from "typedi";
+import { ConfigContract } from "./lib/Config";
 
 async function startServer() {
   const app = express();
 
-  /**
-   * A little hack here
-   * Import/Export can only be used in 'top-level code'
-   * Well, at least in node 10 without babel and at the time of writing
-   * So we are using good old require.
-   **/
+  await ConfigLoader();
+
+  const Config: ConfigContract = Container.get("config");
+
+  Logger.info("✌️ Config loaded");
+
   await require("./loaders").default({ expressApp: app });
 
-  app.listen(config.port, err => {
+  app.listen(Config.get("app.port"), err => {
     if (err) {
       Logger.error(err);
       process.exit(1);
@@ -25,7 +26,7 @@ async function startServer() {
     }
     Logger.info(`
       ################################################
-      🛡️  Server listening on port: ${config.port} 🛡️
+      🛡️  Server listening on port: ${Config.get("app.port")} 🛡️
       ################################################
     `);
   });

@@ -1,8 +1,9 @@
 import express from "express";
 import bodyParser from "body-parser";
-import config from "../config";
+import config from "../config/app";
 import routes from "../api";
 import cors from "cors";
+import Container from "typedi";
 
 export default ({ app }: { app: express.Application }) => {
   /**
