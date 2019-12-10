@@ -5,10 +5,8 @@ export interface CurrencyManagerConfigDisk {
   };
 }
 
-export interface CurrencyManagerConfigConfig {
-  /**
-   * The default disk returned by `disk()`.
-   */
+export interface CurrencyManagerConfig {
   default?: string;
+  defaultCurrency?: string;
   disks?: CurrencyManagerConfigDisk;
 }
