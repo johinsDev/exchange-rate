@@ -1,11 +1,13 @@
 import express from "express";
 import bodyParser from "body-parser";
-import config from "../config/app";
 import routes from "../api";
 import cors from "cors";
 import Container from "typedi";
+import { ConfigContract } from "../lib/Config";
 
 export default ({ app }: { app: express.Application }) => {
+  const Config: ConfigContract = Container.get("config");
+
   /**
    * Health Check endpoints
    */
@@ -20,20 +22,13 @@ export default ({ app }: { app: express.Application }) => {
   // It shows the real origin IP in the heroku or Cloudwatch logs
   app.enable("trust proxy");
 
-  // The magic package that prevents frontend developers going nuts
-  // Alternate description:
-  // Enable Cross Origin Resource Sharing to all origins by default
   app.use(cors());
 
-  // Some sauce that always add since 2014
-  // "Lets you use HTTP verbs such as PUT or DELETE in places where the client doesn't support it."
-  // Maybe not needed anymore ?
   app.use(require("method-override")());
 
-  // Middleware that transforms the raw string of req.body into json
   app.use(bodyParser.json());
-  // Load API routes
-  app.use(config.api.prefix, routes());
+
+  app.use(Config.get("app.api.prefix"), routes());
 
   /// catch 404 and forward to error handler
   app.use((req, res, next) => {
