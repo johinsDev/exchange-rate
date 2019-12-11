@@ -6,7 +6,12 @@
   "author": "johinsdev",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon"
+    "dev": "nodemon",
+    "build": "tsc",
+    "start": "node build/app.js"
+  },
+  "engines": {
+    "node": "12.x"
   },
   "devDependencies": {
     "@types/express": "^4.17.2",

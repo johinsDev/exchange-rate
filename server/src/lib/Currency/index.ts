@@ -61,7 +61,7 @@ class Currency {
       throw Error("Unable to pull driver from the drivers list");
     }
 
-    return new Driver({ ...diskConfig, ...config });
+    return new Driver(Object.assign(diskConfig, config));
   }
 
   async getProp(code: string, prop: string) {
