@@ -1,0 +1,19 @@
+/* purgecss start ignore */
+@tailwind base;
+/* purgecss end ignore */
+
+@tailwind components;
+
+@tailwind utilities;
+
+body {
+  margin: 0;
+  padding: 0;
+  color: #49525d;
+  font-size: 16px;
+  background-color: #f3f5f9;
+}
+
+.container {
+  @apply w-10/12 mx-auto;
+}
