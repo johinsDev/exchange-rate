@@ -38,12 +38,12 @@ export default {
    */
   api: {
     prefix: "/api"
+  },
+  /**
+   * Mailgun email credentials
+   */
+  exchange: {
+    api: process.env.API_EXCHANGE,
+    domain: process.env.DOMAIN_EXCHANGE
   }
-  // /**
-  //  * Mailgun email credentials
-  //  */
-  // emails: {
-  //   apiKey: "API key from mailgun",
-  //   domain: "Domain Name from mailgun"
-  // }
 };

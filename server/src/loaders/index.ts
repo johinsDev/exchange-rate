@@ -8,6 +8,7 @@ import Container from "typedi";
 import EventLoader from "./event";
 import history from "../models/history";
 import "../subscribers/user";
+import cronLoader from "./cron";
 
 const Models = {
   user,
@@ -23,6 +24,9 @@ export default async ({ expressApp }) => {
 
   await LoggerLoaded();
   Logger.info("✌️ Logger loaded");
+
+  await cronLoader();
+  Logger.info("✌️ CRON loaded!");
 
   Object.keys(Models).forEach(modelName => {
     const name = `${modelName.charAt(0).toUpperCase()}${modelName.slice(
