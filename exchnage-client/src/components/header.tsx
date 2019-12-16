@@ -1,19 +1,19 @@
-import Link from "next/link";
+import Link from "./Link";
 
 const LIST = [
   {
     route: "/",
-    name: "Home",
+    name: "Exchange",
     alt: "Home icon"
   },
   {
-    route: "/",
-    name: "Blog",
+    route: "/login",
+    name: "Login",
     alt: "Blog icon"
   },
   {
-    route: "/",
-    name: "Resources",
+    route: "/register",
+    name: "Register",
     alt: "Resources icon"
   },
   {

@@ -7,8 +7,6 @@ const URL = "/exchange/convert?";
 
 const useExchange = (from: string, to: string, amount: string) => {
   const [state, onClick] = useAsyncFn(async () => {
-    console.log(amount, from, to);
-
     if (
       !amount ||
       CURRNECIES.indexOf(to) === -1 ||
