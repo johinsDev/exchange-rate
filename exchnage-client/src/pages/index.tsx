@@ -7,6 +7,7 @@ import Button from "../components/Button";
 import { API_URL, API_PREFIX } from "../contants";
 import useAsyncFn from "react-use/lib/useAsync";
 import { useRouter } from "next/router";
+import { useUserDispatch } from "../libs/user";
 
 const from = "USD";
 
@@ -63,6 +64,8 @@ function Home() {
 export default () => {
   const { replace } = useRouter();
 
+  const dispatch = useUserDispatch();
+
   const { value, loading } = useAsyncFn(async () => {
     try {
       const res = await fetch(`${API_URL}${API_PREFIX}/auth/me`, {
@@ -70,7 +73,11 @@ export default () => {
           Authorization: `Bearer ${localStorage.getItem("token")}`
         }
       });
-      return await res.json();
+
+      const json = await res.json();
+
+      dispatch({ type: "add_user", payload: json });
+      return json;
     } catch (error) {}
   });
 

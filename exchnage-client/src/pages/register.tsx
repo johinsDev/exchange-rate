@@ -7,7 +7,7 @@ import { API_URL, API_PREFIX } from "../contants";
 import { useRouter } from "next/router";
 import useAsync from "react-use/lib/useAsync";
 
-function Login() {
+function Register() {
   const [password, setPassword] = useState("123456");
 
   const [email, setEmail] = useState("johinsdev8@gmail.com");
@@ -96,5 +96,5 @@ export default () => {
     );
   }
 
-  return <Login />;
+  return <Register />;
 };
